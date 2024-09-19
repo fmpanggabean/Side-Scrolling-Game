@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using UnityEngine;
 
 public class Player : MonoBehaviour
@@ -7,17 +8,20 @@ public class Player : MonoBehaviour
 
     [SerializeField, Range(0, 20)] private float speed;
     [SerializeField, Range(5, 20)] private float jumpPower;
+    [SerializeField] private bool isControllable;
     private float horizontalDirection;
 
     private void Awake()
     {
         rb2d = GetComponent<Rigidbody2D>();
         rb2d.constraints = RigidbodyConstraints2D.FreezeRotation;
+
+        isControllable = true;
     }
 
     private void Update()
     {
-        UpdatePosition();
+        if (isControllable) UpdatePosition();
     }
 
     private void UpdatePosition()
@@ -37,5 +41,18 @@ public class Player : MonoBehaviour
         Vector2 direction = rb2d.velocity;
         direction.y = jumpPower;
         rb2d.velocity = direction;
+    }
+
+    internal Vector3 GetPosition()
+    {
+        return transform.position;
+    }
+
+    internal IEnumerator ForcedMove(Vector2 knockbackDirection, float duration)
+    {
+        isControllable = false;
+        rb2d.velocity = knockbackDirection;
+        yield return new WaitForSeconds(duration);
+        isControllable = true;
     }
 }

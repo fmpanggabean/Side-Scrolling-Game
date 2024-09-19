@@ -62,4 +62,9 @@ public class Player : MonoBehaviour
     {
         health.Reduce(damage);
     }
+
+    internal void GainHealth(int healingFactor)
+    {
+        health.Gain(healingFactor);
+    }
 }

@@ -389,6 +389,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 08d78a61eda65ba4b9d6513f2c9e29be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gravity: 20
 --- !u!1 &2050252393
 GameObject:
   m_ObjectHideFlags: 0
@@ -401,6 +402,8 @@ GameObject:
   - component: {fileID: 2050252394}
   - component: {fileID: 2050252396}
   - component: {fileID: 2050252397}
+  - component: {fileID: 2050252398}
+  - component: {fileID: 2050252399}
   m_Layer: 0
   m_Name: Player
   m_TagString: Untagged
@@ -537,6 +540,31 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 1, y: 2}
   m_Direction: 0
+--- !u!114 &2050252398
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2050252393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc8ed851beb5d40488193689a7c030f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2050252399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2050252393}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3269f83c99a904944ac9de5f683790e8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 10
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

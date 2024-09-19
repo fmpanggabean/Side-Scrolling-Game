@@ -9,6 +9,8 @@ public class Player : MonoBehaviour
     [SerializeField, Range(0, 20)] private float speed;
     [SerializeField, Range(5, 20)] private float jumpPower;
     [SerializeField] private bool isControllable;
+    [SerializeField] private Health health;
+
     private float horizontalDirection;
 
     private void Awake()

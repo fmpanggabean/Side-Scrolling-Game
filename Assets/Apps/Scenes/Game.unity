@@ -1054,6 +1054,9 @@ MonoBehaviour:
   speed: 10
   jumpPower: 18
   isControllable: 0
+  health:
+    maxHealth: 3
+    currentHealth: 3
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

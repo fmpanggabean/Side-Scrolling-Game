@@ -57,4 +57,9 @@ public class Player : MonoBehaviour
         yield return new WaitForSeconds(duration);
         isControllable = true;
     }
+
+    internal void TakeDamage(int damage)
+    {
+        health.Reduce(damage);
+    }
 }

@@ -6,6 +6,7 @@ using UnityEngine;
 public class Obstacle : MonoBehaviour
 {
     private KnockbackEffect knockback;
+    [SerializeField] private int damage;
 
     private void Awake()
     {
@@ -18,6 +19,7 @@ public class Obstacle : MonoBehaviour
 
         if (player is not null)
         {
+            player.TakeDamage(damage);
             knockback.Execute(player);
         }
     }

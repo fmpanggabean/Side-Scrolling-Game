@@ -14,5 +14,10 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         player.SetHorizontalDirection(Input.GetAxisRaw("Horizontal"));
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            player.Jump();
+        }
     }
 }

@@ -6,6 +6,7 @@ public class Player : MonoBehaviour
     private Rigidbody2D rb2d;
 
     [SerializeField, Range(0, 20)] private float speed;
+    [SerializeField, Range(5, 20)] private float jumpPower;
     private float horizontalDirection;
 
     private void Awake()
@@ -29,5 +30,12 @@ public class Player : MonoBehaviour
     public void SetHorizontalDirection(float x)
     {
         horizontalDirection = x;
+    }
+
+    internal void Jump()
+    {
+        Vector2 direction = rb2d.velocity;
+        direction.y = jumpPower;
+        rb2d.velocity = direction;
     }
 }
